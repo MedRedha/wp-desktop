@@ -1,6 +1,6 @@
 {
   "name": "WordPressDesktop",
-  "version": "4.1.0-beta3",
+  "version": "4.2.0-beta1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Automattic/wp-desktop/"
@@ -98,7 +98,7 @@
           "server/pages/**/*",
           "!server/pages/test",
           "!server/pages/README.md",
-          "server/bundler/assets.json",
+          "server/bundler/assets-fallback.json",
           "config/*(secrets|_shared|desktop).json"
         ]
       }
