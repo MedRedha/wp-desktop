@@ -6,7 +6,7 @@
 const electron = require( 'electron' );
 const BrowserWindow = electron.BrowserWindow;
 const app = electron.app;
-
+const debug = require( 'debug' )( 'desktop:index' );
 // HACK(sendhilp, 9/6/2016): The reason for this strange importing is there seems to be a
 // bug post Electron 1.1.1 in which attempting to access electron.screen
 // outside of app.on('ready') results in an error about require being unable
@@ -72,9 +72,8 @@ function openWindow( windowName ) {
 
 			windows[windowName].handle = new BrowserWindow( Config[settings.config] );
 			windows[windowName].handle.setMenuBarVisibility( false );
-			windows[windowName].handle.webContents.session.setProxy( 'direct://', function() {
-				windows[windowName].handle.loadURL( Config.server_url + ':' + Config.server_port + '/desktop/' + settings.file );
-			} );
+			debug( Config.server_url + ':' + Config.server_port + '/desktop/' + settings.file );
+			windows[windowName].handle.loadURL( Config.server_url + ':' + Config.server_port + '/desktop/' + settings.file );
 
 			windows[windowName].handle.on( 'closed', function() {
 				windows[windowName].handle = null;
