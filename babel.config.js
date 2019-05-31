@@ -1,10 +1,10 @@
+const electronVersion = require( 'electron/package.json' ).version;
+
 module.exports = {
 	presets: [
-		[ '@babel/env', { targets: { electron: '4.2.0' } } ],
-		'@babel/react'
+		[ '@babel/env', { targets: { electron: electronVersion } } ],
+		'@babel/react',
+		'@babel/preset-typescript',
 	],
-	plugins: [
-		'@babel/plugin-proposal-class-properties',
-		'@babel/plugin-syntax-dynamic-import',
-	]
+	plugins: [ '@babel/plugin-proposal-class-properties', '@babel/plugin-syntax-dynamic-import' ],
 };
