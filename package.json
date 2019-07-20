@@ -68,7 +68,7 @@
     "xvfb-maybe": "0.2.1"
   },
   "dependencies": {
-    "acorn": "6.1.1",
+    "acorn": "6.2.1",
     "debug": "2.6.8",
     "electron-fetch": "1.2.1",
     "electron-spellchecker": "github:ssbc/electron-spellchecker-prebuilt",
